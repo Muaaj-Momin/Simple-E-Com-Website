@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refund Policy  |  GameFuel</title>
+  <link rel="shortcut icon" href="Img/LogoBar.png" type="image/x-icon">
+  <style>
+    :root{
+      --bg: #0b0b0b;
+      --card: #0f1316;
+      --muted: #9fb0c6;
+      --text: #eaf6ff;
+      --accent: #77c7ff;
+      --maxw: 920px;
+    }
+
+    *{
+      box-sizing:border-box
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:32px auto;
+      padding:24px
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px
+    }
+
+    header h1{
+      font-size:40px;
+      color:#fff;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .3rem;
+      margin:0;
+    }
+
+    header a.button{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      padding:8px 12px;
+      border-radius:10px;
+      color:var(--text);
+      text-decoration:none;
+      transition: 0.2s;
+    }
+
+    header a:hover {
+      background: rgba(119,199,255,0.1);
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6)
+    }
+
+    article h2{
+      color:var(--accent);
+      font-size:24px;
+      margin-top:18px
+    }
+
+    article p, article li{
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    article ol{
+      padding-left:18px;
+    }
+
+    footer{
+      margin-top:20px;
+      color:var(--muted);
+      font-size:16px;
+      display: flex;
+      justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Refund Policy</h1>
+      <a class="button" href="/#bottom-footer"> ❮❮ Back to Home</a>
+    </header>
+
+    <div class="card">
+      <article>
+        <section>
+          <h2>1. Overview</h2>
+          <p>Our Refund Policy explains the conditions under which refunds are issued for purchases made through GameFuel. By making a purchase, you agree to this policy.</p>
+        </section>
+
+        <section>
+          <h2>2. Eligibility for Refunds</h2>
+          <p>Refunds are generally not provided for successfully delivered in-game currency or top-ups. Refunds may be granted under the following circumstances:</p>
+          <ol>
+            <li>Technical errors caused by GameFuel leading to failed or incomplete delivery.</li>
+            <li>Duplicate transactions resulting in double charges.</li>
+            <li>Unauthorized charges, provided valid proof is submitted within 7 days of the transaction.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>3. Refund Process</h2>
+          <p>If you are eligible for a refund, please email our support team with your order details and payment proof. Refunds will be processed within 5-10 business days and credited to your original payment method.</p>
+        </section>
+
+        <section>
+          <h2>4. Non-Refundable Items</h2>
+          <ul>
+            <li>Digital goods delivered successfully to your account.</li>
+            <li>Items purchased with promotional offers, vouchers, or discounts.</li>
+            <li>Transactions older than 30 days.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Contact Us</h2>
+          <p>If you have questions about refunds, email us at <a href="mailto:support@gamefuel.com" style="color:var(--accent)">support@gamefuel.com</a>.</p>
+        </section>
+      </article>
+
+      <footer>
+        <small>© <span id="year"></span> GameFuel Pvt. Ltd. • 12 Marina Arcade, Mumbai</small>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

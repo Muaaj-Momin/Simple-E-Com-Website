@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameFuel  |  India's No. 1 Game Recharge Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="Img/LogoBar.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+   <header>
+    <div class="head-left">
+      <img src="Img/Logoo.png"  alt="Logo">
+    </div>
+
+    <div class="head-right">
+      <p><a href="account.html">Account</a></p>
+      <p><a href="wallet.html">Wallet</a></p>
+      <p><a href="#Product">Products</a></p>
+      <p><a href="order.html">Orders</a></p>
+      <p><a href="#Contact">Contact us</a></p>
+    </div>
+   </header>
+
+   <section class="hero-section autoBlur" >
+    <div class="hero-vid">
+      <video loop autoplay muted plays-inline class="hero-video">
+        <source src="Vids/hero-1.mp4" >
+      </video>
+    </div>
+
+    <div class="hero-info">
+    <h1>DOMINATE</h1>
+    <p>Fuel your victories with instant game credits.</p>
+    <button>Fuel Up Now</button>
+    </div>
+    
+    <div class="next-btn">NEXT</div>
+   </section>
+  </div>
+
+
+  <section class="about-section">
+    <p>Welcome to <span>GameFuel</span></p>
+    <div class="autoBlur">
+    <h1>DISCOVER . RECHARGE . CONQUER</h1>
+    </div>
+    <div class="image-box autoTakeFull">
+      <img src="Img/about.webp" alt="about-img">
+    </div>
+    <h4><span>Instant</span> top-ups for your favourite games, anytime & anywhere</h4>
+    <h5>Safe, fast and hassle-free ~ Top up & keep playing nonstop!</h5>
+  </section>
+
+    <!-- PRODUCT SECTION -->
+
+
+    
+    <div class="wrapper autoMerge" id="up-product">
+      <h1>Product Checkpoint</h1>
+      <div class="grid">
+        <div class="left" id="Product">
+        <!-- Step 1: Validate -->
+          <section class="step active" id="step-1">
+          <div class="step-header">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Enter Player Details</div>
+              <div class="step-sub">Enter <b>User ID</b> & <b>Region/Server ID</b> then validate.</div>
+            </div>
+          </div>
+          <div class="field-row" style="margin-bottom:10px">
+            <input id="userId" class="input" placeholder="User ID" />
+            <input id="regionId" class="input" placeholder="Region / Server ID" />
+            <button id="validateBtn" class="btn">Validate</button>
+          </div>
+          <div id="validationMsg" class="hint">Not validated yet.</div>
+        </section>
+
+        <!-- Step 2: Packages -->
+        <section class="step" id="step-2" style="margin-top:12px">
+          <div class="step-header">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Choose a Recharge Pack</div>
+              <div class="step-sub">Select your pack to top‑up.</div>
+            </div>
+          </div>
+          <div class="packages" id="packages"></div>
+        </section>
+
+        <!-- Step 4: Payment  -->
+
+        <section class="step" id="step-4" style="margin-top:12px">
+          <div class="step-header">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-title">Select Payment Method</div>
+              <div class="step-sub">Pay using Fuel Wallet or any UPI apps.</div>
+            </div>
+          </div>
+          <div class="payments" id="payments">
+            <div class="paycard" data-method="wallet">Fuel Wallet</div>
+            <div class="paycard" data-method="upi">UPI Apps</div>
+          </div>
+          <div class="cta">
+            <button class="btn secondary" id="resetBtn">Reset</button>
+            <button class="btn" id="payBtn" disabled>Proceed to Pay</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Step 3 Summary -->
+      <aside class="step summary" id="step-3">
+        <div class="step-header">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">Overview</div>
+            <div class="step-sub">Check the details before you pay.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="row"><span>Player</span> <b id="sumPlayer">—</b></div>
+          <div class="row"><span>Region</span> <b id="sumRegion">—</b></div>
+          <div class="divider"></div>
+          <div class="row"><span>Pack</span> <b id="sumPack">Select a pack</b></div>
+          <div class="row"><span>Price</span> <b id="sumPrice">₹0</b></div>
+          <div class="row"><span>Fee (2% + ₹5)</span> <b id="sumFee">₹0</b></div>
+          <div class="divider"></div>
+          <div class="row big"><span>Total</span> <span id="sumTotal">₹0</span></div>
+        </div>
+        <div>
+          <video class="hint-video" loop autoplay muted plays-inline ><source src="Vids/product-vid.mp4" type="video/mp4"></video>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact-section" id="Contact">
+    <p>Stuck Somewhere?</p>
+    <h1>Reach out to Our Support Squad</h1>
+    <a href="contact.html">CONTACT US </a>
+    <img class="img1"src="Img/contact-main.webp" alt="contact-img">
+    <img class="img2" src="Img/contact-1.webp" alt="contact-img">
+    <img class="img3" src="Img/contact-2.webp" alt="contact-img">
+  </section>
+
+
+  <!-- FOOTER SECTION -->
+
+  <footer id="bottom-footer">
+    <span>© 2025 GameFuel Pvt. Ltd. • 12/C Marina Arcade, Mumbai</span>
+    <a href="t&c.html">Terms & Conditions</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="copyright.html">Copyright</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

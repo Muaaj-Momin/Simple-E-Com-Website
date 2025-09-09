@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallet  |  GameFuel</title>
+<link rel="shortcut icon" href="Img/LogoBar.png" type="image/x-icon">
+<style>
+:root {
+  --bg: #0b0b0b;
+  --card: #0f1316;
+  --muted: #9fb0c6;
+  --text: #eaf6ff;
+  --accent: #77c7ff;
+  --border: rgba(255,255,255,0.05);
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 50px 0;
+}
+
+.wallet-card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 30px;
+  width: 380px;
+  border: 1px solid var(--border);
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.wallet-card h1 {
+  color: #0099ff;
+  font-size: 45px;
+  margin-bottom: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.1.5rem;
+}
+
+.balance-container {
+  background: #161b1f;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  margin-bottom: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balance-container img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.balance-container p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.balance-container span {
+  color: var(--muted);
+}
+
+#addMoneyBtn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#addMoneyBtn:hover {
+  background: #4eaaff;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.payment-option {
+  background: #161b1f;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid var(--border);
+}
+
+.payment-option:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: #ff4b5c;
+  border:none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+}
+.close-btn:hover {
+  background: #ff1f3a;
+}
+
+.btn-home{
+  background:transparent;
+  border:1px solid var(--border);
+  padding:8px 12px;
+  border-radius:10px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  }
+
+.btn-home:hover{
+  background: rgba(119,199,255,0.1);
+}
+
+</style>
+</head>
+<body>
+<div>
+  <a class="btn-home" href="/#site-footer"> ❮❮ Back to Home</a>
+</div>
+<div class="wallet-card">
+  <h1>My Wallet</h1>
+  <div class="balance-container">
+    <img src="Img/Logoo.png" alt="Money Icon">
+    <h1 style="font-family: 'Times New Roman', Times, serif; color: #fff; font-size: 40px; margin: 6px;">GF Coins</h1>
+    <p id="walletBalance">₹00.00</p>
+    <span class="muted-text">Current Balance</span>
+  </div>
+
+  <button id="addMoneyBtn">Add Money</button>
+</div>
+
+<div class="modal" id="paymentModal">
+  <div class="modal-content">
+    <h2>Select Payment Method</h2>
+    <div class="payment-option" data-method="UPI">UPI Apps</div>
+    <div class="payment-option" data-method="NetBanking">Net Banking</div>
+    <button class="close-btn" id="closeModal">Cancel</button>
+  </div>
+</div>
+
+<script>
+const addMoneyBtn = document.getElementById('addMoneyBtn');
+const modal = document.getElementById('paymentModal');
+const closeModal = document.getElementById('closeModal');
+
+addMoneyBtn.addEventListener('click', () => {
+  modal.style.display = 'flex';
+});
+
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+</script>
+
+</body>
+</html>

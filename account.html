@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account  |  GameFuel</title>
+<link rel="shortcut icon" href="Img/LogoBar.png" type="image/x-icon">
+<style>
+  :root {
+    --bg: #0b0b0b;
+    --card: #0f1316;
+    --muted: #9fb0c6;
+    --text: #eaf6ff;
+    --accent: #77c7ff;
+    --border: rgba(255,255,255,0.05);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body {
+    max-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .profile-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 30px;
+    width: 380px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .pfp-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+  }
+
+  .pfp-container img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+  }
+
+  .pfp-container input[type="file"] {
+    display: none;
+  }
+
+  .pfp-container label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--accent);
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--bg);
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .pfp-container label:hover {
+    background: #4eaaff;
+  }
+
+  h2.username {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: 200;
+
+  }
+
+  .section {
+    margin-top: 25px;
+    padding: 15px;
+    background: #161b1f;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+  }
+
+  .section h3 {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .info p {
+    font-size: 16px;
+  }
+
+  .info input {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #0f1316;
+    color: var(--text);
+    width: 80%;
+  }
+
+
+  #editBtn {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 12px 0;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: larger;
+  }
+
+  #editBtn:hover {
+    background: #4eaaff;
+  }
+
+  .section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--accent);
+    opacity: 0.03;
+    transform: rotate(25deg);
+    pointer-events: none;
+  }
+
+  .btn-home{
+  background:transparent;
+  border:1px solid var(--border);
+  padding:8px 12px;
+  border-radius:10px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom: 10px;
+  }
+
+.btn-home:hover{
+  background: rgba(119,199,255,0.1);
+}
+</style>
+</head>
+<body>
+<div>
+  <a class="btn-home" href="/#site-footer"> ❮❮ Back to Home</a>
+</div>
+<div class="profile-card">
+  <div class="pfp-container">
+    <img id="pfp" src="Img/pfp.jpg" alt="Profile Picture">
+    <label for="pfpInput">Change</label>
+    <input type="file" id="pfpInput" accept="image/*">
+  </div>
+
+  <h2 class="username" id="usernameDisplay">john_doe</h2>
+
+  <div class="section">
+    <h3>Name</h3>
+    <div class="info">
+      <p id="nameDisplay">John Doe</p>
+      <input type="text" id="nameInput" style="display:none">
+    </div>
+
+    <h3>Username</h3>
+    <div class="info">
+      <p id="usernameText">john_doe</p>
+      <input type="text" id="usernameInput" style="display:none">
+    </div>
+
+    <h3>Email</h3>
+    <div class="info">
+      <p id="emailDisplay">john@example.com</p>
+      <input type="email" id="emailInput" style="display:none">
+    </div>
+  </div>
+
+  <button id="editBtn">Edit Profile</button>
+</div>
+
+<script>
+  const editBtn = document.getElementById("editBtn");
+  const nameDisplay = document.getElementById("nameDisplay");
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  const emailDisplay = document.getElementById("emailDisplay");
+
+  const nameInput = document.getElementById("nameInput");
+  const usernameInput = document.getElementById("usernameInput");
+  const emailInput = document.getElementById("emailInput");
+  const usernameText = document.getElementById("usernameText");
+
+  let editing = false;
+
+  editBtn.addEventListener("click", () => {
+    editing = !editing;
+
+    if(editing){
+      nameInput.style.display = "block";
+      usernameInput.style.display = "block";
+      emailInput.style.display = "block";
+
+      nameInput.value = nameDisplay.textContent;
+      usernameInput.value = usernameText.textContent;
+      emailInput.value = emailDisplay.textContent;
+
+      nameDisplay.style.display = "none";
+      usernameText.style.display = "none";
+      emailDisplay.style.display = "none";
+
+      editBtn.textContent = "Save Changes";
+    } else {
+      nameDisplay.textContent = nameInput.value;
+      usernameText.textContent = usernameInput.value;
+      usernameDisplay.textContent = usernameInput.value;
+      emailDisplay.textContent = emailInput.value;
+
+      nameInput.style.display = "none";
+      usernameInput.style.display = "none";
+      emailInput.style.display = "none";
+
+      nameDisplay.style.display = "block";
+      usernameText.style.display = "block";
+      emailDisplay.style.display = "block";
+
+      editBtn.textContent = "Edit Profile";
+    }
+  });
+
+  const pfpInput = document.getElementById("pfpInput");
+  const pfpImg = document.getElementById("pfp");
+
+  pfpInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if(file){
+      const reader = new FileReader();
+      reader.onload = () => pfpImg.src = reader.result;
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+</body>
+</html>
